@@ -1,51 +1,86 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-export const HeaderContainer = styled.div`
-  padding: 20px;
+export const HeaderContainer = styled.header`
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Navigation = styled.nav`
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
-export const StyledLink = styled(Link)`
-  padding: 8px 16px;
-  color: #ffffff; /* White text color */
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
+export const StyledLink = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 15px;
+  border: 1px solid #989898;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  
+  &.active {
+    border-color: #EFF40B;
+    color: #EFF40B;
+  }
 
-  &:hover,
-  &:focus {
-    color: #00baff; /* Blue text color on hover/focus */
-    text-shadow:
-      0 0 5px #00baff,
-      0 0 10px #00baff,
-      0 0 20px #00baff,
-      0 0 40px #00baff,
-      0 0 80px #00baff;
+  &:hover {
+    border-color: #EFF40B;
+    color: #EFF40B;
   }
 `;
 
-export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
-  fill: ${(props) => props.color || '#ffffff'};
+export const IconWrapper = styled.div`
   display: inline-block;
-  margin-right: 5px;
-  box-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
+  margin-right: 8px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+`;
+
+export const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 180px;
+    height: 48px;
+    fill: white;
+  }
+`;
+
+export const ProfileButton = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid #989898;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+
+  &.active {
+    border-color: #EFF40B;
+    color: #EFF40B;
+  }
+
+  &:hover {
+    border-color: #EFF40B;
+    color: #EFF40B;
+  }
 `;
