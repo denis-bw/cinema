@@ -18,6 +18,8 @@ const movies = [
   { id: 4, title: 'Фільм 4', imageUrl: image_4 },
   { id: 5, title: 'Фільм 5', imageUrl: image_5 },
   { id: 6, title: 'Фільм 6', imageUrl: image_6 },
+  { id: 7, title: 'Фільм 6', imageUrl: image_6 },
+  { id: 8, title: 'Фільм 6', imageUrl: image_6 },
 ];
 
 const Slider = () => {
@@ -27,7 +29,7 @@ const Slider = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '60px',

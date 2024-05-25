@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  border: 1px solid #ccc;
+ 
   border-radius: 8px;
   padding: 16px;
   margin: 8px;
@@ -18,6 +18,7 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h3`
+  color: #F4F4F4;
   font-size: 1.2rem;
   margin: 8px 0;
 `;
