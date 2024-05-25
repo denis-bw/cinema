@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
   margin-top: 60px;
+  margin-bottom: 0;
   background-color: #F4F4F4;
   padding: 20px;
   text-align: center;
-  bottom: 0;
   width: 100%;
 `;
 
