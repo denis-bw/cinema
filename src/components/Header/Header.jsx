@@ -1,9 +1,11 @@
 import React from 'react';
-import { HeaderContainer, Navigation, StyledLink, Logo, ProfileButton } from './Header.styled';
+import { HeaderContainer, Navigation, StyledLink, Logo, ProfileButton, } from './Header.styled';
 import { ReactComponent as LogoSVG } from 'assets/logo.svg';
+
 
 export const Header = () => {
   return (
+
     <HeaderContainer>
       <Navigation>
         <StyledLink to="/">

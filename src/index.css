@@ -35,3 +35,31 @@ img {
 button {
   cursor: pointer;
 }
+
+
+/* пагінація */
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.pagination li a {
+  padding: 8px 12px;
+  border: 1px solid #F4F4F4;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #F4F4F4;
+}
+
+.pagination li.active a {
+  background-color: #EFF40B;
+  color: #121212;
+  border-color: #EFF40B;
+}
+/* пагінація */
