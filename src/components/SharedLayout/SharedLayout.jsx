@@ -13,7 +13,7 @@ const SharedLayout = () => {
       </Suspense>
       
     <FooterWrapper>
-      <FooterText>© 2024 | All Rights Reserved | Developed with by Students</FooterText>
+      <FooterText>© 2024 | All Rights Reserved | Developed with by Students OPNU</FooterText>
     </FooterWrapper>  
     </>
   );
