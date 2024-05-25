@@ -14,7 +14,7 @@ export const BannerWrapper = styled.div`
 export const BannerContent = styled.div`
   max-width: 600px;
   text-align: left; /* Align text to the left */
-  padding-left: 80px;
+  /* padding-left: 60px; */
 `;
 
 export const BannerDescription = styled.p`
