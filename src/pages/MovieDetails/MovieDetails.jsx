@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { format } from 'date-fns';
 import {
   MovieDetailsWrapper,
   MovieImage,
@@ -32,10 +34,29 @@ const StaticMovieData = {
 
 
 const MovieDetails = () => {
- const { id } = useParams();
-  
-  // Можна використовувати static data для імітації отриманих даних
+  const { id } = useParams();
+
   const movie = StaticMovieData; // імітація отриманих даних з API
+
+  const [date, setDate] = useState(format(Date.now(), 'dd-MM-yyyy'));
+  const [dateTime, setDateTime] = useState(null);
+  const [seat, setSeat] = useState(null);
+  
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+  };
+  
+  const handleDateTimeChange = (newDate) => {
+    setDateTime(newDate);
+  };
+  
+   const handleSeatChange = (newSeat) => {
+    setSeat(newSeat);
+   };
+  const dataM = {date,seat, dateTime}
+  console.log(dataM)
+
+
 
   return (
     <>
@@ -53,10 +74,10 @@ const MovieDetails = () => {
       
       </MovieDetailsWrapper>
       <StyledDatepickerWrapper>
-        <StyledDatepicker />
+        <StyledDatepicker onDateChange={handleDateChange} />
       </StyledDatepickerWrapper>
-      <SessionTimePicker />
-      <SeatChart />
+      <SessionTimePicker onDateTimeChange={handleDateTimeChange}/>
+      <SeatChart onDataChange={handleSeatChange} />
       <OrderButtonSection/>
     </>
   )

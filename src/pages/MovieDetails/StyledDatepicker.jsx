@@ -1,12 +1,22 @@
 // src/components/StyledDatepicker.jsx
 import React, { useState } from "react";
 import { format } from "date-fns";
+import { useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { CalendarGlobalStyles, TitleWrapper } from "./StyledDatepicker.styled";
 import "react-datepicker/dist/react-datepicker.css";
 
-const StyledDatepicker = () => {
+const StyledDatepicker = ({ onDateChange }) => {
   const [selectedDate, setSelectedDate] = useState(Date.now());
+  useEffect(() => {
+      const dateNew = new Date(selectedDate).toString()
+      setSelectedDate(dateNew);
+   }, []);
+  
+  // console.log(selectedDate)
+  useEffect(() => {
+      onDateChange(selectedDate);
+  }, [selectedDate]);
 
   const CustomInput = React.forwardRef(({ value, onClick }, ref) => {
     return (
@@ -27,7 +37,6 @@ const StyledDatepicker = () => {
         dateFormat={"dd MM yyyy"}
         calendarStartDay={1}
         formatWeekDay={(day) => day.substr(0, 1)}
-        
       />
       <CalendarGlobalStyles />
     </>

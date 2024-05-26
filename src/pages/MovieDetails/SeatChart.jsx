@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { SeatChartContainer, Row, Seat, TitleSeat, TextSeat } from './SeatChart.styled';
+import { useEffect } from 'react';
 
-const SeatChart = () => {
+const SeatChart = ({onDataChange}) => {
 
-  const [seatData, setSeatData] = useState({
-    1: [
+    const [seatData, setSeatData] = useState({
+    price: 100,
+    seat: {1: [
       { number: 1, available: true },
       { number: 2, available: true },
       { number: 3, available: true },
@@ -61,26 +63,31 @@ const SeatChart = () => {
       { number: 4, available: true },
       { number: 5, available: true },
       { number: 6, available: true },
-    ],
+    ],},
   });
     const [selectedSeat, setSelectedSeat] = useState(null);
-    console.log(selectedSeat)
-
+    
+    
   const handleSeatClick = (rowNumber, seatNumber) => {
-    const seat = seatData[rowNumber].find(seat => seat.number === seatNumber);
+    const seat = seatData?.seat[rowNumber].find(seat => seat.number === seatNumber);
     if (seat.available) {
       setSelectedSeat({ rowNumber, seatNumber });
     } else {
       setSelectedSeat(null);
     }
   };
-
+ 
+    
+    useEffect(() => {
+      onDataChange({price: seatData.price, selectedSeat,});
+    }, [selectedSeat]);
+    
     return (
     <>
     <TitleSeat>Екран</TitleSeat>
             
     <SeatChartContainer>
-      {Object.entries(seatData).map(([rowNumber, seats]) => (
+      {Object.entries(seatData.seat).map(([rowNumber, seats]) => (
         <Row key={rowNumber}>
           {seats.map(seat => (
             <Seat
@@ -97,7 +104,7 @@ const SeatChart = () => {
         </Row>
       ))}
     </SeatChartContainer>
-            <TextSeat>ВАШЕ МІСЦЕ: ряд:{selectedSeat?.rowNumber || '0'}, місце: {selectedSeat?.seatNumber  || '0'}</TextSeat>       
+            <TextSeat>ВАШЕ МІСЦЕ: ряд:{selectedSeat?.rowNumber || '0'}, місце: {selectedSeat?.seatNumber || '0'}, ціна: { seatData.price}грн</TextSeat>       
     </>
   );
 };
