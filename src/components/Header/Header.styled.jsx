@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  width: 100%;
 
   @media (max-width: 768px) {
     padding: 10px;
