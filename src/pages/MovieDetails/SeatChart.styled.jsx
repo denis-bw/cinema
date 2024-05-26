@@ -1,8 +1,9 @@
 // SeatChart.styled.js
 import styled from 'styled-components';
+import { Title } from '../Home/MovieCard.styled';
 
 export const SeatChartContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,4 +38,13 @@ export const Seat = styled.div`
         width: 30px;
         height: 30px;
     }
+`;
+
+export const TitleSeat = styled.p`
+    margin-top: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
 `;

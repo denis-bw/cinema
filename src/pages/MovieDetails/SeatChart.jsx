@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SeatChartContainer, Row, Seat } from './SeatChart.styled';
+import { SeatChartContainer, Row, Seat, TitleSeat } from './SeatChart.styled';
 
 const SeatChart = () => {
     const [selectedSeat, setSelectedSeat] = useState(null);
@@ -74,7 +74,10 @@ const SeatChart = () => {
     }
   };
 
-  return (
+    return (
+    <>
+    <TitleSeat>Екран</TitleSeat>
+            
     <SeatChartContainer>
       {Object.entries(seatData).map(([rowNumber, seats]) => (
         <Row key={rowNumber}>
@@ -93,6 +96,7 @@ const SeatChart = () => {
         </Row>
       ))}
     </SeatChartContainer>
+    </>
   );
 };
 
