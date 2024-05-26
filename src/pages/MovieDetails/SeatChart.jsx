@@ -63,8 +63,9 @@ const SeatChart = () => {
       { number: 6, available: true },
     ],
   });
-    const [selectedSeat, setSelectedSeat] = useState({rowNumber:0, seatNumber: 0 });
+    const [selectedSeat, setSelectedSeat] = useState(null);
     console.log(selectedSeat)
+
   const handleSeatClick = (rowNumber, seatNumber) => {
     const seat = seatData[rowNumber].find(seat => seat.number === seatNumber);
     if (seat.available) {
@@ -96,7 +97,7 @@ const SeatChart = () => {
         </Row>
       ))}
     </SeatChartContainer>
-            <TextSeat>ВАШЕ МІСЦЕ: ряд:{selectedSeat.rowNumber}, місце: {selectedSeat.seatNumber}</TextSeat>       
+            <TextSeat>ВАШЕ МІСЦЕ: ряд:{selectedSeat?.rowNumber || '0'}, місце: {selectedSeat?.seatNumber  || '0'}</TextSeat>       
     </>
   );
 };
