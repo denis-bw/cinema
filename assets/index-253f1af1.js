@@ -422,8 +422,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   }
   .react-datepicker {
-    position: absolute;
-    left: 50%;
     top: 50%;
     transform: translate(-1%, 0%);
     display: flex;
