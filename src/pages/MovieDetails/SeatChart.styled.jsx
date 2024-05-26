@@ -48,3 +48,10 @@ export const TitleSeat = styled.p`
     text-align: center;
     text-transform: uppercase;
 `;
+export const TextSeat = styled.p`
+    margin-top: 50px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+`;

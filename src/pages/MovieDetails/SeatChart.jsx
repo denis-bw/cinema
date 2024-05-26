@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { SeatChartContainer, Row, Seat, TitleSeat } from './SeatChart.styled';
+import { SeatChartContainer, Row, Seat, TitleSeat, TextSeat } from './SeatChart.styled';
 
 const SeatChart = () => {
-    const [selectedSeat, setSelectedSeat] = useState(null);
-    console.log(selectedSeat)
+
   const [seatData, setSeatData] = useState({
     1: [
       { number: 1, available: true },
@@ -64,7 +63,8 @@ const SeatChart = () => {
       { number: 6, available: true },
     ],
   });
-
+    const [selectedSeat, setSelectedSeat] = useState({rowNumber:0, seatNumber: 0 });
+    console.log(selectedSeat)
   const handleSeatClick = (rowNumber, seatNumber) => {
     const seat = seatData[rowNumber].find(seat => seat.number === seatNumber);
     if (seat.available) {
@@ -96,6 +96,7 @@ const SeatChart = () => {
         </Row>
       ))}
     </SeatChartContainer>
+            <TextSeat>ВАШЕ МІСЦЕ: ряд:{selectedSeat.rowNumber}, місце: {selectedSeat.seatNumber}</TextSeat>       
     </>
   );
 };
