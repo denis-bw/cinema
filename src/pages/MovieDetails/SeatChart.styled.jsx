@@ -16,8 +16,8 @@ export const Row = styled.div`
 `;
 
 export const Seat = styled.div`
-  width: 40px;
-  height: 40px;
+    width: 20px;
+    height: 20px;
   border-radius: 4px;
   background-color: ${props => {
     if (props.isAvailable && !props.isSelected) return '#6EE37A';
@@ -32,4 +32,9 @@ export const Seat = styled.div`
   align-items: center;
   font-size: 12px;
   color: ${props => (props.isAvailable ? 'black' : 'white')};
+
+    @media (min-width: 768px) {
+        width: 30px;
+        height: 30px;
+    }
 `;
