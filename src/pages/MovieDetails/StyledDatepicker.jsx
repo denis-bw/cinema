@@ -27,6 +27,7 @@ const StyledDatepicker = () => {
         dateFormat={"dd MM yyyy"}
         calendarStartDay={1}
         formatWeekDay={(day) => day.substr(0, 1)}
+        
       />
       <CalendarGlobalStyles />
     </>

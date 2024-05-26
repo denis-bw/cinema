@@ -11,6 +11,9 @@ import {
 } from './MovieDetails.styled';
 import MovieDetailsBanner from '../../assets/MovieDetailsBanner.jpg'
 import StyledDatepicker from './StyledDatepicker'; 
+import SessionTimePicker from './SessionTimePicker';
+import SeatChart from './SeatChart'
+import OrderButtonSection from './OrderButtonSection'
 
 
 const StaticMovieData = {
@@ -52,6 +55,9 @@ const MovieDetails = () => {
       <StyledDatepickerWrapper>
         <StyledDatepicker />
       </StyledDatepickerWrapper>
+      <SessionTimePicker />
+      <SeatChart />
+      <OrderButtonSection/>
     </>
   )
 };
