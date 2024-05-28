@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { format } from 'date-fns';
 import {
   MovieDetailsWrapper,
   MovieImage,
@@ -16,7 +15,6 @@ import StyledDatepicker from './StyledDatepicker';
 import SessionTimePicker from './SessionTimePicker';
 import SeatChart from './SeatChart'
 import OrderButtonSection from './OrderButtonSection'
-
 
 const StaticMovieData = {
   id: '1',
@@ -38,10 +36,10 @@ const MovieDetails = () => {
 
   const movie = StaticMovieData; // імітація отриманих даних з API
 
-  const [date, setDate] = useState(format(Date.now(), 'dd-MM-yyyy'));
+  const [date, setDate] = useState((Date.now()).toString());
   const [dateTime, setDateTime] = useState(null);
   const [seat, setSeat] = useState(null);
-  
+
   const handleDateChange = (newDate) => {
     setDate(newDate);
   };
@@ -53,8 +51,8 @@ const MovieDetails = () => {
    const handleSeatChange = (newSeat) => {
     setSeat(newSeat);
    };
-  const dataM = {date,seat, dateTime}
-  console.log(dataM)
+  const dataM = {date, seat, dateTime}
+  // console.log(dataM)
 
 
 
@@ -78,7 +76,7 @@ const MovieDetails = () => {
       </StyledDatepickerWrapper>
       <SessionTimePicker onDateTimeChange={handleDateTimeChange}/>
       <SeatChart onDataChange={handleSeatChange} />
-      <OrderButtonSection/>
+      <OrderButtonSection dataOrder={dataM} />
     </>
   )
 };

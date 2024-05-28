@@ -13,9 +13,9 @@ const StyledDatepicker = ({ onDateChange }) => {
       setSelectedDate(dateNew);
    }, []);
   
-  // console.log(selectedDate)
   useEffect(() => {
-      onDateChange(selectedDate);
+      const dateNew = new Date(selectedDate).toString()
+      setSelectedDate(dateNew);
   }, [selectedDate]);
 
   const CustomInput = React.forwardRef(({ value, onClick }, ref) => {

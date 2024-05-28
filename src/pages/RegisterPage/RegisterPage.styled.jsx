@@ -34,7 +34,7 @@ export const Button = styled.button`
   background-color: #343434;
   color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
 
   &:hover {
