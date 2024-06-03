@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
 
   return (
     <Card onClick={handleClick}>
-      <Image src={movie.image} alt={movie.title} />
+      <Image src={movie.imageUrl} alt={movie.title} />
       <Title>{movie.title}</Title>
       <Genre>{movie.genre} | {movie.year}</Genre>
     </Card>

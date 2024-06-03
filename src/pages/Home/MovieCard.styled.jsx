@@ -12,7 +12,9 @@ export const Card = styled.div`
 `;
 
 export const Image = styled.img`
+  margin: auto;
   max-width: 100%;
+  min-height: 250px;
   height: auto;
   border-radius: 4px;
 `;

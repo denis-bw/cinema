@@ -1,8 +1,9 @@
 // Banner.styled.jsx
 import styled from 'styled-components';
+import BannerImg from 'assets/banner.jpg'
 
 export const BannerWrapper = styled.div`
-  background: url('src/assets/banner.jpg') no-repeat center center/cover;
+  background: url(${BannerImg}) no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;

@@ -23,8 +23,8 @@ export const Grid = styled.div`
 `;
 
 export const Card = styled.div`
-  background: white;
-  border-radius: 5px;
+  background: #2d2d2d;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 `;
@@ -32,15 +32,41 @@ export const Card = styled.div`
 export const CardTitle = styled.h3`
   margin: 0;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px;
+  color: #EFF40B;
 `;
 
 export const CardDetail = styled.p`
-  margin: 5px 0;
-  font-size: 16px;
-  color: #555;
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff;
 `;
 
 export const TextTitle = styled.h1`
     color: white;
 `
+
+export const LinkText = styled.p`
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 15px;
+  border: 1px solid #989898;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+
+  &.active {
+    border-color: #EFF40B;
+    color: #EFF40B;
+  }
+
+  &:hover {
+    border-color: #EFF40B;
+    color: #EFF40B;
+  }
+`;

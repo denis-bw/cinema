@@ -12,9 +12,9 @@ const SharedLayout = () => {
         <Outlet />
       </Suspense>
       
-    <FooterWrapper>
-      <FooterText>© 2024 | All Rights Reserved | Developed with by Students OPNU</FooterText>
-    </FooterWrapper>  
+      <FooterWrapper>
+        <FooterText>© 2024 | All Rights Reserved | Developed with by Students OPNU</FooterText>
+      </FooterWrapper>  
     </>
   );
 };

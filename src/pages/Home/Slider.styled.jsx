@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px;
 `;

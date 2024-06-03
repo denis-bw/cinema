@@ -1,21 +1,27 @@
 // ProfilePage.jsx
 import React from 'react';
-import { Container, Grid, Card, CardTitle, CardDetail,TextTitle  } from './Profile.styled';
+import { Container, Grid, Card, CardTitle, CardDetail, TextTitle, LinkText } from './Profile.styled';
+import { NavLink, Navigate } from 'react-router-dom';
+import { useAuth } from 'components/Auth/Auth'
+import { Orders } from 'components/DataBase/DataBase'
 
-const orders = [
-  { film: 'Avatar', date: '2024-05-30', time: '14:00', seat: 'A1', price: '$10' },
-  { film: 'Inception', date: '2024-06-01', time: '18:00', seat: 'B2', price: '$12' },
-  { film: 'Titanic', date: '2024-06-03', time: '20:00', seat: 'C3', price: '$15' },
-  { film: 'The Matrix', date: '2024-06-05', time: '22:00', seat: 'D4', price: '$20' },
-  // Додайте більше замовлень за потреби
-];
 
 const Profile = () => {
+  const {isLoggedIn, isAdmin, login, logout} = useAuth();
+  if (!isLoggedIn)
+    return (<Navigate to="/login"></Navigate>);
   return (
     <Container>
-      <TextTitle>Мої замовлення</TextTitle>
+      <div>
+        <img src="https://img.icons8.com/bubbles/250/user.png" alt="User Avatar" />
+        <TextTitle style={{textAlign: 'center'}}>User User</TextTitle>
+        <NavLink to="/">
+          <LinkText style={{width: '100%'}} onClick={logout}>Вийти</LinkText>
+        </NavLink>
+      </div>
+      <TextTitle>Моя історія переглядів</TextTitle>
       <Grid>
-        {orders.map((order, index) => (
+        {Orders.map((order, index) => (
           <Card key={index}>
             <CardTitle>Фільм: {order.film}</CardTitle>
             <CardDetail>Дата: {order.date}</CardDetail>

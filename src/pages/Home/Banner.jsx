@@ -6,6 +6,7 @@ const Banner = () => {
   return (
     <BannerWrapper>
       <BannerContent>
+        <h1>Avatar: The Last Airbender</h1>
         <BannerDescription>
           A young boy known as the Avatar must master the four elemental powers to save a world at war — and fight a ruthless enemy bent on stopping him.
         </BannerDescription>

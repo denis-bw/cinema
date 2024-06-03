@@ -13,8 +13,6 @@ const RegisterPage = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // Логіка реєстрації
-    localStorage.setItem('authToken', 'your-auth-token'); // Збереження токену в localStorage
     navigate('/profile'); // Після успішної реєстрації перенаправлення на сторінку профілю
   };
 
