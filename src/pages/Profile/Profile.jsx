@@ -14,7 +14,7 @@ const Profile = () => {
     <Container>
       <div>
         <img src="https://img.icons8.com/bubbles/250/user.png" alt="User Avatar" />
-        <TextTitle style={{textAlign: 'center'}}>User User</TextTitle>
+        <TextTitle style={{textAlign: 'center'}}>Студент НУОП</TextTitle>
         <NavLink to="/">
           <LinkText style={{width: '100%'}} onClick={logout}>Вийти</LinkText>
         </NavLink>

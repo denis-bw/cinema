@@ -16,7 +16,7 @@ export const Image = styled.img`
   max-width: 100%;
   min-height: 250px;
   height: auto;
-  border-radius: 4px;
+  border-radius: 20px;
 `;
 
 export const Title = styled.h3`
