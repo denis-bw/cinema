@@ -42,8 +42,8 @@ const Admin = () => {
           <Button onClick={handleClearMovies}>Очистити список фільмів</Button>
         </Card>
 
-        {movies.map((movie, index) => (
-          <Card key={index}>
+        {movies.map((movie) => (
+          <Card key={movie.id}>
             <EditMovieForm data={movie} onSubmit={onSubmit} onDelete={onDelete}></EditMovieForm>
           </Card>
         ))}
